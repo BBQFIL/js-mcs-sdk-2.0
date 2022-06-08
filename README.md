@@ -1,7 +1,6 @@
 # 使用方法
 
-此版本适用于filswan发布的 js-mcs-sdk v2.0.0
-本工具配合 js-mcs-sdk v2.0.0 可以实现以下功能：
+本工具配合 filswan发布的 js-mcs-sdk v2.0.0 可以自动化实现以下功能：
 
  1. 文件上传（单文件上传、批量上传）  
 		脚本  upload.sh
