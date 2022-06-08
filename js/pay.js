@@ -11,15 +11,15 @@ const mcs = new mcsSdk({
 async function main() {
 
 
-  const W_CID = 'aabe985a-47e7-4608-8648-ee58ccafed0eQmf3xowGNM6vJwTTJrgrfxn31G87vYss6kk6FtG1H93Vpy'
+  const W_CID = ''
   const FILE_SIZE = '5120000'
   const MIN_AMOUNT = '0.5'
 
   const tx = await mcs.makePayment(W_CID, MIN_AMOUNT, FILE_SIZE)
   console.log('pay_statue: ' + tx.status) 
 /* 
-  const SOURCE_FILE_UPLOAD_ID = 141306
-  const IPFS_URL = 'https://calibration-ipfs.filswan.com/ipfs/Qmf3xowGNM6vJwTTJrgrfxn31G87vYss6kk6FtG1H93Vpy'
+  const SOURCE_FILE_UPLOAD_ID = 
+  const IPFS_URL = ''
   const NFT = {
     name: 'aaaa',
     description: 'aaaa',
@@ -31,7 +31,7 @@ async function main() {
   console.log(mintResponse)
   
 
-  const SOURCE_FILE_UPLOAD_ID = '141303'
+  const SOURCE_FILE_UPLOAD_ID = ''
   console.log(await mcs.getFileDetails(SOURCE_FILE_UPLOAD_ID))
 */
 }
