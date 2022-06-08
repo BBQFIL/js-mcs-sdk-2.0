@@ -70,3 +70,4 @@ Polygon Mumbai Testnet RPC -[通过 Alchemy 注册](https://www.alchemy.com/)
     bash mint.sh
 
 > 注意：受制于EVM的参数nonce影响，支付+铸造、单支付、单铸造同一时间只可以运行其中一个。
+> 上诉所有脚本均可随时通过Ctrl+C终止,不会影响下次执行.
