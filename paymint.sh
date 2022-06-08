@@ -6,7 +6,6 @@ mint_log="./log/mint.log"
 paymint_plan="./log/paymint_plan.log"
 echo "------------------------------------------------------------"
 
-#循环获取/cid/目录下的文件名
 
 while true
 do
