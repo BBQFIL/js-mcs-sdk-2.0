@@ -9,7 +9,7 @@
 
 以上四个功能均为独立模块，可视网络情况搭配使用
 
-# 依赖
+## 依赖
 [Node.js](https://nodejs.org/en/) - v16​​.13.0 (npm v8.1.0)
 Polygon Mumbai Testnet Wallet - [Metamask 教程](https://docs.filswan.com/getting-started/beginner-walkthrough/public-testnet/setup-metamask)  
 Polygon Mumbai Testnet RPC -[通过 Alchemy 注册](https://www.alchemy.com/)
