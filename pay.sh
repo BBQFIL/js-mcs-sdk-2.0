@@ -4,8 +4,6 @@ pay_plan="./log/pay_plan.log"
 pay_log="./log/pay.log"
 echo "------------------------------------------------------------"
 
-#循环获取/cid/目录下的文件名
-
 while true
 do  
     #检查./log/pay.log文件是否存在
