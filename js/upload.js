@@ -9,11 +9,11 @@ const mcs = new mcsSdk({
 //console.log(mcs.publicKey)
 
 async function main() {
-  const FILE_NAME = '1654675853'
+  const FILE_NAME = ''
   const FILE_PATH = './file/aaaa'
 
   const fileArray = [
-    { fileName: FILE_NAME, file: fs.createReadStream(FILE_PATH) },
+    { fileName: FILE_NAME, file: fs.createReadStream(FILE_PATH) }, //一行代表一次只上传一个文件
 
   ]
 
