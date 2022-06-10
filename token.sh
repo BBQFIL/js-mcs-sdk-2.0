@@ -1,7 +1,7 @@
 #!/bin/bash
-  token1="0x9EBd24bE4f1F4dA3c4389bB8B67a6F69448d6B93"
-  token2="0x2c2Cabf9DCbFa824a9199A28e84ec2B9E7fB28D1"
-  token3="0xc40Bfa0254eC6EA081CD48919BFE688f5661e5fa"
+  token1=""
+  token2=""
+  token3=""
 matic(){
   for i in {$token1,$token2,$token3}
   do
