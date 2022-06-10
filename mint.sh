@@ -42,13 +42,15 @@ do
         w_cid=`grep -A 4 "$line" $mint_log |tail -1|tr -d ",|'"|awk '{print $NF}'`
         source_file_upload_id=`echo $line|awk '{print $2}'|tr -d ","`
         ipfs_url=`grep -A 2 "$line" $mint_log |tail -1|tr -d ",|'"|awk '{print $NF}'`
-        echo -ne "`date +"%Y-%m-%d %H:%M:%S"`  File \033[34m$n\033[0m    $line  status:  "
-        sed -i 21c"\ \ const SOURCE_FILE_UPLOAD_ID = $source_file_upload_id" $js
-        sed -i 22c"\ \ const IPFS_URL = '$ipfs_url'" $js
+	echo -ne "`date +"%Y-%m-%d %H:%M:%S"`  File \033[34m$n\033[0m    $line  status:  "
+        sed -i "/.*const SOURCE_FILE_UPLOAD_ID*/c\\ \ const SOURCE_FILE_UPLOAD_ID = $source_file_upload_id" $js
+	sed -i "/.*const IPFS_URL*/c\\ \ const IPFS_URL = '$ipfs_url'" $js
+#        sed -i 21c"\ \ const SOURCE_FILE_UPLOAD_ID = $source_file_upload_id" $js
+#        sed -i 22c"\ \ const IPFS_URL = '$ipfs_url'" $js
         #如果mint成功,则在./log/mint.log对应source_file_upload_id行末尾加上mintok
         /usr/local/bin/node $js > ./log/mint_status.log 2>&1
-        if [ `cat ./log/mint_status.log|wc -l` -eq 1 ] ;then
-            echo -e "\033[34mSUCCESS\033[0m"
+        if [ `cat ./log/mint_status.log|wc -l` -eq 0 ] ;then
+            echo -e "\033[34mmintOK\033[0m"
             sed -i "/$line/{s/$/ mintok/}" $mint_log
         else
             echo -e "\033[31mFAILED\033[0m"

@@ -42,11 +42,12 @@ do
     do
         w_cid=`grep -A 4 "$line" $pay_log |tail -1|tr -d ",|'"|awk '{print $NF}'`
         echo -ne "`date +"%Y-%m-%d %H:%M:%S"`  File \033[34m$n\033[0m    $line  status:  "
-        sed -i 14c"\ \ const W_CID = '$w_cid'" $js
+	sed -i "/.*const W_CID*/c\\ \ const W_CID = '$w_cid'" $js
+#        sed -i 14c"\ \ const W_CID = '$w_cid'" $js
         #如果支付成功,则在./log/pay.log对应source_file_upload_id行末尾加上payok
         /usr/local/bin/node $js > ./log/pay_status.log 2>&1
-        if [ `grep -E "transactionHash|pay_statue: true" ./log/pay_status.log|wc -l` -gt 0 ] ;then
-            echo -e "\033[34mSUCCESS\033[0m"
+        if [ `grep transactionHash ./log/pay_status.log|wc -l` -gt 0 ] || [ `cat ./log/pay_status.log|wc -l` -eq 0 ] ;then
+            echo -e "\033[34mpayOK\033[0m"
             sed -i "/$line/{s/$/ payok/}" $pay_log
         else
             echo -e "\033[31mFAILED\033[0m"
